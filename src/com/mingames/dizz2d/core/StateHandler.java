@@ -1,8 +1,12 @@
 package com.mingames.dizz2d.core;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import com.mingames.dizz2d.engine.State;
@@ -20,8 +24,8 @@ public class StateHandler{
 	public static final int GAME = 2;
 	
 	public StateHandler(int startState) {
-		states[MENU] = new MenuState();
-		states[DEAD] = new DeadState();
+		//states[MENU] = new MenuState();
+		//states[DEAD] = new DeadState();
 		states[GAME] = new GameState();
 		currentStateId = startState;
 	}
@@ -34,7 +38,14 @@ public class StateHandler{
 		states[currentStateId].update();
 	}
 	
-	public void render(Graphics g,JPanel img) {
-		states[2].render(g,img);
+	public void render(Graphics g) {
+		states[2].render(g);
+		/*BufferedImage image = null;
+        try {
+			image = ImageIO.read(new File("tiles.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		g.drawImage(image, 0, 0, null);*/
 	}
 }

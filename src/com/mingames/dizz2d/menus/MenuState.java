@@ -16,7 +16,7 @@ public class MenuState implements State{
 	}
 
 	@Override
-	public void render(Graphics g, JPanel obs) {
+	public void render(Graphics g) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -4,17 +4,30 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class Camera {
 	
 	int x=0;
 	int y=0;
-	RenderEntity[] renderentities = new RenderEntity[10000000];
+	RenderEntity[] renderentities = new RenderEntity[1000];
 	
-	public static int maxLayer=1;
+	public static int maxLayer=4;
 	public static int maxEntities=0;
+	BufferedImage io;
+	
+	public Camera() {
+		try {
+			io = ImageIO.read(new File("res/tiles.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public RenderEntity registerRenderEntity(int a,int b, int width, int height, BufferedImage image, int layer) {
 		boolean foundNumber=false;
@@ -35,12 +48,12 @@ public class Camera {
 	}
 	
 	public void render(Graphics g, JPanel obs) {
+
 		for(int i=0;i<maxLayer;i++) {
-			for(int j=0;j<maxEntities;i++) {
+			for(int j=0;j<maxEntities;j++) {
 				if(!(renderentities[j]==null)) {
 					if(renderentities[j].layer==i) {
-						System.out.println("c");
-						g.drawImage(renderentities[j].image,renderentities[j].x+x,renderentities[j].y+y/*,renderentities[j].width,renderentities[j].height*/,obs);
+						g.drawImage(renderentities[j].image,renderentities[j].x+x,renderentities[j].y+y,renderentities[j].width,renderentities[j].height,null);
 					}
 				}
 			}
@@ -48,8 +61,8 @@ public class Camera {
 	}
 	
 	public void setCamera(int a, int b) {
-		x=a;
-		y=b;
+		x=-a+350;
+		y=-b+350;
 	}
 	
 }

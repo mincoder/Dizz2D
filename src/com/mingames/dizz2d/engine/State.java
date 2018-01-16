@@ -8,6 +8,6 @@ import javax.swing.JPanel;
 public interface State {
 	
 	public void update();
-	public void render(Graphics g, JPanel obs);
+	public void render(Graphics g);
 	
 }
