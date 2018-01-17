@@ -10,5 +10,6 @@ public interface Block {
 	public int getDamage();
 	public void setDamage(int set);
 	public int getLayer();
+	public void update();
 	
 }
