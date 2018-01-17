@@ -13,7 +13,7 @@ public class LevelGenerator {
 		for(int x=0;x<level.length;x++) {
 			for(int y=0;y<level[x].length;y++) {
 				if(level[x][y]>3) {
-					reponse[x][y] = new Water();
+					//reponse[x][y] = new Water();
 				}
 			}
 		}
