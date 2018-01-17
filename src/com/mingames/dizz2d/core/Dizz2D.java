@@ -38,15 +38,8 @@ public class Dizz2D extends JPanel implements ActionListener{
 	}
 	
 	public void paint(Graphics g) {
-		/*g.fillRect(0, 0, 700, 700);
-		BufferedImage image = null;
-        try {
-			image = ImageIO.read(new File("tiles.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		g.drawImage(image, 0, 0, null);*/
 		sh.render(g);
+		sh.update();
 	}
 	
 }

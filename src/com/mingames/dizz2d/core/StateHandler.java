@@ -24,8 +24,8 @@ public class StateHandler{
 	public static final int GAME = 2;
 	
 	public StateHandler(int startState) {
-		//states[MENU] = new MenuState();
-		//states[DEAD] = new DeadState();
+		states[MENU] = new MenuState();
+		states[DEAD] = new DeadState();
 		states[GAME] = new GameState();
 		currentStateId = startState;
 	}
@@ -39,13 +39,6 @@ public class StateHandler{
 	}
 	
 	public void render(Graphics g) {
-		states[2].render(g);
-		/*BufferedImage image = null;
-        try {
-			image = ImageIO.read(new File("tiles.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		g.drawImage(image, 0, 0, null);*/
+		states[currentStateId].render(g);
 	}
 }

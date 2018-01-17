@@ -18,7 +18,6 @@ public class Camera {
 	RenderEntity[] renderentities = new RenderEntity[1000];
 	
 	public static int maxLayer=4;
-	public static int maxEntities=0;
 	BufferedImage io;
 	
 	public Camera() {
@@ -34,7 +33,6 @@ public class Camera {
 		int number=0;
 		while(!foundNumber) if(renderentities[number]==null) { foundNumber = true; } else number++;
 		renderentities[number] = new RenderEntity(a,b,width,height,number,image,layer);
-		maxEntities++;
 		return renderentities[number];
 	}
 	
@@ -50,7 +48,7 @@ public class Camera {
 	public void render(Graphics g, JPanel obs) {
 
 		for(int i=0;i<maxLayer;i++) {
-			for(int j=0;j<maxEntities;j++) {
+			for(int j=0;j<renderentities.length;j++) {
 				if(!(renderentities[j]==null)) {
 					if(renderentities[j].layer==i) {
 						g.drawImage(renderentities[j].image,renderentities[j].x+x,renderentities[j].y+y,renderentities[j].width,renderentities[j].height,null);
