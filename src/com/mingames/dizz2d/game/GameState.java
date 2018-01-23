@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 
 import com.mingames.dizz2d.core.DizzInit;
 import com.mingames.dizz2d.engine.Camera;
+import com.mingames.dizz2d.engine.Level;
 import com.mingames.dizz2d.engine.RenderEntity;
 import com.mingames.dizz2d.engine.State;
 import com.mingames.dizz2d.engine.TextureMap;
@@ -24,6 +25,8 @@ public class GameState implements State, KeyListener{
 	
 	Player player = new Player(350,350,"res/player.png","res/playerwalkfront.png","res/playerwalkback.png","res/playerwalkleft.png","res/playerwalkright.png");
 	RenderEntity playerren;
+	
+	Level l = new Level(LevelGenerator.GenerateLevel(100, 100));
 	
 	int x=0;
 	
@@ -44,6 +47,8 @@ public class GameState implements State, KeyListener{
 		//Player updates
 		player.moveWithoutCollision();
 		player.update();
+		
+		l.RenderToCamera(cam);
 		
 		//Camera updates
 		cam.setCamera(player.x+32, player.y+32);

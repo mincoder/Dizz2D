@@ -15,7 +15,7 @@ public class Camera {
 	
 	int x=0;
 	int y=0;
-	RenderEntity[] renderentities = new RenderEntity[1000];
+	RenderEntity[] renderentities = new RenderEntity[100000];
 	
 	public static int maxLayer=4;
 	BufferedImage io;
