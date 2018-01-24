@@ -8,8 +8,8 @@ import com.mingames.dizz2d.engine.TextureMap;
 
 public class Water implements Block{
 
-	private static BufferedImage[] animImg = {TextureMap.getSprite(1, 0, "res/tiles.png"),TextureMap.getSprite(2, 0, "res/tiles.png"),TextureMap.getSprite(3, 0, "res/tiles.png"),TextureMap.getSprite(4, 0, "res/tiles.png")};
-	private static Animation anim = new Animation(animImg,0.5,Dizz2D.MillisecondsBetweenTicks);
+	private static BufferedImage[] animImg = {TextureMap.getSprite(3, 0, "res/tiles.png"),TextureMap.getSprite(2, 0, "res/tiles.png"),TextureMap.getSprite(3, 0, "res/tiles.png"),TextureMap.getSprite(4, 0, "res/tiles.png")};
+	private static Animation anim = new Animation(animImg,100,Dizz2D.MillisecondsBetweenTicks);
 	private int layer=0;
 	private int damage=10;
 	

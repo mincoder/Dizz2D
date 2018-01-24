@@ -31,7 +31,11 @@ public class Camera {
 	public RenderEntity registerRenderEntity(int a,int b, int width, int height, BufferedImage image, int layer) {
 		boolean foundNumber=false;
 		int number=0;
-		while(!foundNumber) if(renderentities[number]==null) { foundNumber = true; } else number++;
+		while(!foundNumber) {
+			if(renderentities[number]==null) { foundNumber = true; } else number++;
+			
+			
+		}
 		renderentities[number] = new RenderEntity(a,b,width,height,number,image,layer);
 		return renderentities[number];
 	}
