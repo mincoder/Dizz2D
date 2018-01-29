@@ -23,7 +23,11 @@ public class Level {
 				try {
 				cam.deleteRenderEntity(blockRender[x][y]);
 				} catch(NullPointerException e) {}
-				blockRender[x][y]=cam.registerRenderEntity(x*64, y*64, 64, 64, blocks[x][y].getImg(), 0);
+				try {
+					//if(!((blockRender[x][y].x+cam.x>cam.gameWidth)||(blockRender[x][y].y+cam.y>cam.gameHeight)||(blockRender[x][y].x+blockRender[x][y].width+cam.x<0)||(blockRender[x][y].y+blockRender[x][y].height+cam.y<0)))
+						blockRender[x][y]=cam.registerRenderEntity(x*64, y*64, 64, 64, blocks[x][y].getImg(), 0);
+				} catch(NullPointerException e) {}
+
 			}
 		}
 	}

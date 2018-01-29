@@ -48,6 +48,7 @@ public class GameState implements State, KeyListener{
 		player.moveWithoutCollision();
 		player.update();
 		
+		//Render level
 		l.RenderToCamera(cam);
 		
 		//Camera updates

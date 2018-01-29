@@ -14,7 +14,6 @@ public class LevelGenerator {
 		int[][] level = DizzNoise.getRandomNoise(new Random(new Random().nextLong()), 5, 1, 2, 10000, w, h, 10);
 		for(int x=0;x<level.length;x++) {
 			for(int y=0;y<level[x].length;y++) {
-				System.out.println(level[x][y]);
 				if(level[x][y]<5) {
 					response[x][y] = new Water();
 				} else {

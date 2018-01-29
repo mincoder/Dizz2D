@@ -4,6 +4,10 @@ import java.awt.Rectangle;
 
 public class Entity extends Rectangle{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public int xspeed=0;
 	public int yspeed=0;
 	

@@ -20,6 +20,9 @@ public class Camera {
 	public static int maxLayer=4;
 	BufferedImage io;
 	
+	public static final int gameWidth=500;
+	public static final int gameHeight=500;
+	
 	public Camera() {
 		try {
 			io = ImageIO.read(new File("res/tiles.png"));
